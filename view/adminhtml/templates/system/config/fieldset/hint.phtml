@@ -1,0 +1,41 @@
+<?php
+/*
+ * MagePulse
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MagePulse Proprietary EULA
+ * that is bundled with this package in the file LICENSE.
+ * It is also available through the world-wide-web at this URL:
+ * https://magepulse.com/legal/magento-license/
+ *
+ * @category    MagePulse
+ * @package     MagePulse_Core
+ * @copyright   Copyright (c) MagePulse (https://magepulse.com)
+ * @license     https://magepulse.com/legal/magento-license/  MagePulse Proprietary EULA
+ *
+ */
+
+/** @var MagePulse\Core\Block\System\Config\Form\Fieldset\AbstractHint $block */
+?>
+<div id="magepulse-container">
+    <img src='<?=$block->escapeUrl($block->getViewFileUrl('MagePulse_Core::images/logo-stacked.webp')) ?>'
+         alt="MagePulse logo">
+    <div>
+        <p>
+            <strong><?= $block->escapeHtml($block->getModuleName()) ?></strong>
+            <?=$block->escapeHtml($block->getVersion())?>
+        </p>
+        <p>
+            <?= $block->escapeHtml(__('Website'))?>:
+            <a href="https://magepulse.com" target="_blank">
+                <?=$block->escapeHtml(__('magepulse.com'))?>
+            </a><br/>
+            <?= $block->escapeHtml(__('Like, share and follow us on'))?>
+            <a href="https://twitter.com/Mage_Pulse" target="_blank">
+                <?=$block->escapeHtml(__('Twitter'))?>
+            </a>.
+        </p>
+    </div>
+
+</div>
