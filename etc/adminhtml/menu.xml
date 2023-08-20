@@ -19,7 +19,10 @@
     <menu>
 
         <!-- Main Menu Link -->
-        <add id="MagePulse_Core::MagePulse_menu" title="MagePulse" module="MagePulse_Core" sortOrder="90" resource="MagePulse_Core::main_menu"/>
+        <add id="MagePulse_Core::magepulse_menu" title="MagePulse" module="MagePulse_Core" sortOrder="70" resource="MagePulse_Core::main_menu"/>
+
+        <!-- Menu Sections-->
+        <add id="MagePulse_Core::config_menu" title="Module Configuration" module="MagePulse_Core" sortOrder="60" resource="MagePulse_Core::developer" parent="MagePulse_Core::magepulse_menu"/>
 
     </menu>
 </config>

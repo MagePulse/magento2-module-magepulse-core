@@ -1,0 +1,36 @@
+/*
+ * MagePulse
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MagePulse Proprietary EULA
+ * that is bundled with this package in the file LICENSE.
+ * It is also available through the world-wide-web at this URL:
+ * https://magepulse.com/legal/magento-license/
+ *
+ * @category    MagePulse
+ * @package     MagePulse_Core
+ * @copyright   Copyright (c) MagePulse (https://magepulse.com)
+ * @license     https://magepulse.com/legal/magento-license/  MagePulse Proprietary EULA
+ *
+ */
+
+@import "variables/_icons.less";
+
+@font-face {
+  font-family: '@{magepulse-font-family}';
+  src:  url('@{magepulse-font-path}/@{magepulse-font-family}.eot?9kliio');
+  src:  url('@{magepulse-font-path}/@{magepulse-font-family}.eot?9kliio#iefix') format('embedded-opentype'),
+  url('@{magepulse-font-path}/@{magepulse-font-family}.ttf?9kliio') format('truetype'),
+  url('@{magepulse-font-path}/@{magepulse-font-family}.woff?9kliio') format('woff'),
+  url('@{magepulse-font-path}/@{magepulse-font-family}.svg?9kliio#@{magepulse-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+// Menu
+.admin__menu .item-magepulse-menu.parent.level-0 > a:before{
+  font-family: '@{magepulse-font-family}';
+  content: @icon-symbol;
+}
