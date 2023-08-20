@@ -17,15 +17,17 @@
 
 @import 'module/_icons.less';
 
-// System Configuration
+//  System Configuration
+//  phpcs:ignore
 #magepulse-container {
-  .lib-clearfix();
-  background: @panel__background-color;
-  border: 1px solid @border-color__base;
-  margin: 0 0  @indent__base;
-  padding: @indent__base;
-  img{
-    float: left;
-    padding-right: @indent__base;
-  }
+    .lib-clearfix();
+    background: @panel__background-color;
+    border: 1px solid @border-color__base;
+    margin: 0 0 @indent__base;
+    padding: @indent__base;
+
+    img {
+        float: left;
+        padding-right: @indent__base;
+    }
 }
