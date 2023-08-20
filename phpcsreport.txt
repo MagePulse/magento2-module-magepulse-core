@@ -1,0 +1,74 @@
+
+FILE: /home/clive/git/magento2/magento-docker/2.4.6-p1/magento/vendor/magepulse/magento2-module-core/view/adminhtml/web/css/source/module/_icons.less
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 2 WARNINGS AFFECTING 2 LINES
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+ 23 | WARNING | Expected 1 space after colon in style definition; newline found
+ 34 | WARNING | CSS class names should be separated with "-" (dash) instead of "_" (underscore)
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/clive/git/magento2/magento-docker/2.4.6-p1/magento/vendor/magepulse/magento2-module-core/view/adminhtml/web/css/source/_module.less
+-----------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ 22 | WARNING | Id selector is used
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/clive/git/magento2/magento-docker/2.4.6-p1/magento/vendor/magepulse/magento2-module-core/Model/ConfigProviderAbstract.php
+-------------------------------------------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 4 WARNINGS AFFECTING 4 LINES
+-------------------------------------------------------------------------------------------------------------------------------------
+  80 | WARNING | [x] The closing parenthesis and the opening brace of a multi-line function declaration must be on the same line
+ 108 | WARNING | [ ] $storeId parameter is not in order
+ 109 | WARNING | [ ] $scopeType parameter is not in order
+ 112 | WARNING | [ ] Line exceeds 120 characters; contains 131 characters
+-------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/clive/git/magento2/magento-docker/2.4.6-p1/magento/vendor/magepulse/magento2-module-core/Helper/Data.php
+--------------------------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 3 WARNINGS AFFECTING 3 LINES
+--------------------------------------------------------------------------------------------------------------------
+ 29 | WARNING | Visibility must be declared on all constants if your project supports PHP 7.1 or later
+ 30 | WARNING | Visibility must be declared on all constants if your project supports PHP 7.1 or later
+ 71 | WARNING | Type is not specified
+--------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/clive/git/magento2/magento-docker/2.4.6-p1/magento/vendor/magepulse/magento2-module-core/Plugin/Backend/Model/Menu/Builder.php
+------------------------------------------------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 25 WARNINGS AFFECTING 25 LINES
+------------------------------------------------------------------------------------------------------------------------------------------
+  35 | WARNING | Class description must contain meaningful information beyond what its name provides or be removed.
+  37 | WARNING | Visibility must be declared on all constants if your project supports PHP 7.1 or later
+  38 | WARNING | Visibility must be declared on all constants if your project supports PHP 7.1 or later
+ 128 | WARNING | Empty CATCH statement detected
+ 254 | WARNING | Missing @param for argument in method annotation
+ 287 | WARNING | Type is not specified
+ 348 | WARNING | Code must not contain multiple empty lines in a row; found 2 empty lines.
+ 380 | WARNING | Type is not specified
+ 411 | WARNING | Type is not specified
+ 419 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 420 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 421 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 422 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 423 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 424 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 425 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 428 | WARNING | Code after the RETURN statement on line 418 cannot be executed
+ 434 | WARNING | Type is not specified
+ 467 | WARNING | Type is not specified
+ 468 | WARNING | Type is not specified
+ 469 | WARNING | Type is not specified
+ 470 | WARNING | Type is not specified
+ 471 | WARNING | Type is not specified
+ 501 | WARNING | Type is not specified
+ 517 | WARNING | There must be exactly one blank line before tags
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Time: 1.83 secs; Memory: 44.01MB
+

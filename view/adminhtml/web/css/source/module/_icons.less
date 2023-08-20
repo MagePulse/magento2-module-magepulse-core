@@ -15,22 +15,23 @@
  *
  */
 
-@import "variables/_icons.less";
+@import 'variables/_icons.less';
 
 @font-face {
-  font-family: '@{magepulse-font-family}';
-  src:  url('@{magepulse-font-path}/@{magepulse-font-family}.eot?9kliio');
-  src:  url('@{magepulse-font-path}/@{magepulse-font-family}.eot?9kliio#iefix') format('embedded-opentype'),
-  url('@{magepulse-font-path}/@{magepulse-font-family}.ttf?9kliio') format('truetype'),
-  url('@{magepulse-font-path}/@{magepulse-font-family}.woff?9kliio') format('woff'),
-  url('@{magepulse-font-path}/@{magepulse-font-family}.svg?9kliio#@{magepulse-font-family}') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+    font-family: '@{magepulse-font-family}';
+    src: url('@{magepulse-font-path}/@{magepulse-font-family}.eot?9kliio');
+    src: url('@{magepulse-font-path}/@{magepulse-font-family}.eot?9kliio#iefix') format('embedded-opentype'),
+    url('@{magepulse-font-path}/@{magepulse-font-family}.ttf?9kliio') format('truetype'),
+    url('@{magepulse-font-path}/@{magepulse-font-family}.woff?9kliio') format('woff'),
+    url('@{magepulse-font-path}/@{magepulse-font-family}.svg?9kliio#@{magepulse-font-family}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
 }
 
-// Menu
-.admin__menu .item-magepulse-menu.parent.level-0 > a:before{
-  font-family: '@{magepulse-font-family}';
-  content: @icon-symbol;
+//  Menu
+//  phpcs:ignore
+.admin__menu .item-magepulse-menu.parent.level-0 > a:before {
+    content: @icon-symbol;
+    font-family: '@{magepulse-font-family}';
 }

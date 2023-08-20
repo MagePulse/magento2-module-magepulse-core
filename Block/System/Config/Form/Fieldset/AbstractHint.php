@@ -36,25 +36,33 @@ abstract class AbstractHint extends Template implements RendererInterface
      */
     protected $_template = 'MagePulse_Core::system/config/fieldset/hint.phtml';
 
+    /**
+     * @var string
+     */
     protected string $moduleCode = 'MagePulse_Core';
 
+    /**
+     * @var string
+     */
     protected string $moduleName = 'MagePulse Core';
 
     /**
      * @param \Magento\Backend\Block\Template\Context $context
-     * @param \MagePulse\Core\Helper\Data                  $helper
-     * @param array                                   $data
+     * @param \MagePulse\Core\Helper\Data $helper
+     * @param array $data
      */
     public function __construct(
         Context $context,
-        Data $helper,
-        array $data = []
+        Data    $helper,
+        array   $data = []
     ) {
         parent::__construct($context, $data);
         $this->helper = $helper;
     }
 
     /**
+     * Render the fieldset html
+     *
      * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
      *
      * @return mixed
@@ -64,15 +72,22 @@ abstract class AbstractHint extends Template implements RendererInterface
         return $this->toHtml();
     }
 
+    /**
+     * Return this modules name
+     *
+     * @return string
+     */
     public function getModuleName(): string
     {
         return $this->moduleName;
     }
 
     /**
+     * Return this modules version
+     *
      * @return string
      */
-    public function getVersion():string
+    public function getVersion(): string
     {
         return 'v' . $this->helper->getExtensionVersion($this->moduleCode);
     }
