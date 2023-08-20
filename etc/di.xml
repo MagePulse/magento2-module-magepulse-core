@@ -23,4 +23,19 @@
         <plugin name="sort-override" type="MagePulse\Core\Plugin\Model\Config"/>
     </type>
 
+    <!-- Logging -->
+    <virtualType name="MagePulse\Core\Model\Logger\VirtualDebug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/magepulse/core.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MagePulse\Core\Model\Logger\VirtualLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="name" xsi:type="string">MagePulseLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">MagePulse\Core\Model\Logger\VirtualDebug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
 </config>
