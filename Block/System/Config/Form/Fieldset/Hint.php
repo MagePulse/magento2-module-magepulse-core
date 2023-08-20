@@ -22,7 +22,13 @@ use MagePulse\Core\Block\System\Config\Form\Fieldset\AbstractHint;
 
 class Hint extends AbstractHint
 {
+    /**
+     * @var string
+     */
     protected string $moduleCode = 'MagePulse_Core';
 
+    /**
+     * @var string
+     */
     protected string $moduleName = 'MagePulse Core';
 }

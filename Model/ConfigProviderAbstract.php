@@ -26,16 +26,35 @@ use Magento\Framework\Module\ModuleListInterface;
 
 abstract class ConfigProviderAbstract
 {
+    /**
+     * @var string
+     */
     protected string $pathPrefix = '/';
 
+    /**
+     * @var ScopeConfigInterface
+     */
     protected ScopeConfigInterface $scopeConfig;
 
+    /**
+     * @var ModuleListInterface
+     */
     protected ModuleListInterface $moduleList;
 
+    /**
+     * @var array
+     */
     protected array $data = [];
 
+    /**
+     * @var string
+     */
     protected string $moduleCode;
 
+    /**
+     * @param ScopeConfigInterface $scopeConfig
+     * @param ModuleListInterface $moduleList
+     */
     public function __construct(ScopeConfigInterface $scopeConfig, ModuleListInterface $moduleList)
     {
         $this->scopeConfig = $scopeConfig;
@@ -53,7 +72,11 @@ abstract class ConfigProviderAbstract
      * @param string $scopeType
      * @return string
      */
-    protected function getValue(string $path, $storeId = null, string $scopeType = ScopeConfigInterface::SCOPE_TYPE_DEFAULT): string
+    protected function getValue(
+        string $path,
+        $storeId = null,
+        string $scopeType = ScopeConfigInterface::SCOPE_TYPE_DEFAULT
+    ): string
     {
         // Global store value
         if ($storeId === null && $scopeType !== ScopeConfigInterface::SCOPE_TYPE_DEFAULT) {
@@ -67,7 +90,11 @@ abstract class ConfigProviderAbstract
 
         // Store value retrieve and save to cache if not already set
         if (!isset($this->data[$path]) || !\array_key_exists($scopeKey, $this->data[$path])) {
-            $this->data[$path][$scopeKey] = $this->scopeConfig->getValue($this->pathPrefix . $path, $scopeType, $storeId) ?? '';
+            $this->data[$path][$scopeKey] = $this->scopeConfig->getValue(
+                $this->pathPrefix . $path,
+                $scopeType,
+                $storeId
+            ) ?? '';
         }
 
         // Return from prefilled cache
@@ -79,7 +106,7 @@ abstract class ConfigProviderAbstract
      *
      * @param string $path
      * @param string $scopeType
-     * @param $storeId
+     * @param int|null $storeId
      * @return bool
      */
     protected function isSetFlag(string $path, $storeId = null, string $scopeType = ScopeConfigInterface::SCOPE_TYPE_DEFAULT): bool
@@ -88,6 +115,8 @@ abstract class ConfigProviderAbstract
     }
 
     /**
+     * Get this modules version
+     *
      * @return string
      */
     public function getExtensionVersion(): string
