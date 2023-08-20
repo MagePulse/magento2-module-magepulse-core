@@ -103,8 +103,7 @@ class Builder
         ModuleListInterface         $moduleList,
         ObjectFactory               $objectFactory,
         ItemFactory                 $itemFactory
-    )
-    {
+    ) {
         $this->scopeConfig = $scopeConfig;
         $this->logger = $logger;
         $this->menuConfig = $menuConfig;
@@ -133,6 +132,12 @@ class Builder
         return $menu;
     }
 
+    /**
+     * Menu watcher
+     *
+     * @param Menu $menu
+     * @return Menu|null
+     */
     private function menuWatcher(Menu $menu)
     {
         $this->logger->debug(__METHOD__);
@@ -216,6 +221,8 @@ class Builder
     }
 
     /**
+     * Get menu items
+     *
      * @param Menu $menu
      *
      * @return array|null
@@ -240,6 +247,8 @@ class Builder
     }
 
     /**
+     * Generate MagePulse items
+     *
      * @return array
      */
     private function generateMagePulseItems($menu)
@@ -273,6 +282,8 @@ class Builder
     }
 
     /**
+     * Is collected node
+     *
      * @param $menuItem
      *
      * @return bool
@@ -293,6 +304,8 @@ class Builder
     }
 
     /**
+     * Get config items
+     *
      * @return array
      */
     private function getConfigItems()
@@ -309,6 +322,11 @@ class Builder
         return $configItems;
     }
 
+    /**
+     * Generate config items
+     *
+     * @return array
+     */
     private function generateConfigItems()
     {
         $this->logger->debug(__METHOD__);
@@ -330,6 +348,8 @@ class Builder
 
 
     /**
+     * Find resource children
+     *
      * @param \Magento\Config\Model\Config\Structure\Element\Iterator $config
      * @param string $name
      *
@@ -355,6 +375,8 @@ class Builder
     }
 
     /**
+     * Get installed modules
+     *
      * @param $configItems
      *
      * @return array
@@ -384,6 +406,8 @@ class Builder
     }
 
     /**
+     * Get module title
+     *
      * @param $name
      *
      * @return string
@@ -405,6 +429,8 @@ class Builder
     }
 
     /**
+     * Clone menu items
+     *
      * @param $menuItems
      * @param Menu $menu
      * @return array
@@ -436,6 +462,8 @@ class Builder
     }
 
     /**
+     * Generate menu item
+     *
      * @param $id
      * @param $installedModule
      * @param $resource
@@ -468,6 +496,8 @@ class Builder
     }
 
     /**
+     * Get module full name
+     *
      * @param $itemData
      *
      * @return string
