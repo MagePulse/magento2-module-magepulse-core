@@ -20,4 +20,6 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 * [Security] in case of vulnerabilities.
 
 ## [Unreleased]
+
+## [1.0.0] - 2023-08-20
 - Initial Release
