@@ -1,30 +1,30 @@
 {
-    "name": "magepulse/magento2-module-core",
-    "description": "Core MagePulse Magento 2 Module",
-    "type": "magento2-module",
-    "version": "1.0.0",
-    "authors": [
-        {
-            "name": "Clive Walkden",
-            "email": "clive@magepulse.com",
-            "homepage": "https://magepulse.com",
-            "role": "Developer"
-        }
-    ],
-    "support": {
-        "email": "support@magepulse.com",
-        "source": "https://github.com/magepulse/magento2-module-magepulse-core"
-    },
-    "license": "proprietary",
-    "require": {
-        "magento/magento-composer-installer": "*"
-    },
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "MagePulse\\Core\\": ""
-        }
+  "name": "magepulse/magento2-module-core",
+  "description": "Core MagePulse Magento 2 Module",
+  "type": "magento2-module",
+  "version": "1.0.1",
+  "authors": [
+    {
+      "name": "Clive Walkden",
+      "email": "clive@magepulse.com",
+      "homepage": "https://magepulse.com",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "email": "support@magepulse.com",
+    "source": "https://github.com/magepulse/magento2-module-magepulse-core"
+  },
+  "license": "proprietary",
+  "require": {
+    "magento/magento-composer-installer": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MagePulse\\Core\\": ""
+    }
+  }
 }
