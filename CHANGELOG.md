@@ -1,25 +1,9 @@
-# Changelog
+## [1.0.1](https://github.com/MagePulse/magento2-module-magepulse-core/compare/v1.0.0...v1.0.1) (2023-09-06)
 
-All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+### Bug Fixes
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
+* **docs:** Links and badges now point correctly ([2f48727](https://github.com/MagePulse/magento2-module-magepulse-core/commit/2f487275cbf11be6e9c70d348f6c0a1dd54d33fe))
 
-* MAJOR version when you make incompatible API changes,
-* MINOR version when you add functionality in a backwards-compatible manner, and
-* PATCH version when you make backwards-compatible bug fixes.
 
-##### Types of changes
-* [Added] for new features.
-* [Changed] for changes in existing functionality.
-* [Deprecated] for soon-to-be removed features.
-* [Removed] for now removed features.
-* [Fixed] for any bug fixes.
-* [Security] in case of vulnerabilities.
 
-## [Unreleased]
-
-## [1.0.0] - 2023-08-20
-- Initial Release
