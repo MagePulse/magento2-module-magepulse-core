@@ -4,6 +4,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   changelog:
     runs-on: ubuntu-latest
@@ -15,6 +18,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v4.0.0
         with:
           github-token: ${{ secrets.github_token }}
+          version-file: './composer.json'
 
       - name: create release
         uses: actions/create-release@v1
