@@ -9,7 +9,7 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
 
 class Disable extends Field
 {
-    protected function _getElementsHtml(AbstractElement $element): string
+    protected function _getElementHtml(AbstractElement $element): string
     {
         $element->setDisabled('disabled');
         return $element->getElementHtml();
