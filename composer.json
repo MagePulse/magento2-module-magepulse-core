@@ -2,7 +2,7 @@
   "name": "magepulse/magento2-module-core",
   "description": "Core MagePulse Magento 2 Module",
   "type": "magento2-module",
-  "version": "v1.0.1",
+  "version": "1.1.0",
   "authors": [
     {
       "name": "Clive Walkden",
