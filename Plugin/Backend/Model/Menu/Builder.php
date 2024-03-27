@@ -30,7 +30,7 @@ use Magento\Store\Model\ScopeInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- *
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Builder
 {
@@ -120,6 +120,7 @@ class Builder
      * @param \Magento\Backend\Model\Menu\Builder $subject
      * @param Menu $menu
      * @return Menu
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function afterGetResult($subject, Menu $menu)
     {
@@ -137,6 +138,9 @@ class Builder
      *
      * @param Menu $menu
      * @return Menu|null
+     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     private function menuWatcher(Menu $menu)
     {

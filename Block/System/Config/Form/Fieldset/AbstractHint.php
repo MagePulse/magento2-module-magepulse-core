@@ -66,6 +66,7 @@ abstract class AbstractHint extends Template implements RendererInterface
      * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
      *
      * @return mixed
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function render(AbstractElement $element)
     {
