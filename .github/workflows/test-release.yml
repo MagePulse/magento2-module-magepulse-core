@@ -1,0 +1,26 @@
+name: Test Releases
+on:
+  push:
+    branches:
+      - development
+
+permissions:
+  contents: write
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v6
+        with:
+          github-token: ${{ secrets.github_token }}
+          version-file: './composer.json'
+          tag-prefix: 'v'
+          create-summary: 'true'
+          skip-version-file: 'true'
+          skip-commit: 'true'
+          skip-tag: 'true'

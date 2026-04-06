@@ -19,6 +19,13 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
+    <!-- Module Registry — add-on modules self-register by adding items to the $modules array -->
+    <type name="MagePulse\Core\Model\ModuleRegistry">
+        <arguments>
+            <argument name="modules" xsi:type="array"/>
+        </arguments>
+    </type>
+
     <!-- Logging -->
     <virtualType name="MagePulse\Core\Model\Logger\VirtualDebug" type="Magento\Framework\Logger\Handler\Base">
         <arguments>

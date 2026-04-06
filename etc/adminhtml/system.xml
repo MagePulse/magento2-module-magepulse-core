@@ -26,6 +26,14 @@
             <label><![CDATA[MagePulse Core]]></label>
             <tab>magepulse</tab>
             <resource>MagePulse_Core::menu_config</resource>
+            <group id="account" translate="label" sortOrder="0" showInDefault="1">
+                <label>Account</label>
+                <field id="key" type="text" translate="label comment"
+                       sortOrder="10" showInDefault="1">
+                    <label>Account Key</label>
+                    <comment><![CDATA[Obtain from magepulse.com/account. Required to show available and licensed modules.]]></comment>
+                </field>
+            </group>
             <group id="hint" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1"
                    showInStore="1">
                 <frontend_model>MagePulse\Core\Block\System\Config\Form\Fieldset\Hint</frontend_model>
