@@ -394,7 +394,7 @@ class Builder
         $modules = $dispatchResult->toArray();
 
         foreach ($modules as $moduleName) {
-            if ($moduleName === 'MagePulse_Core' || strpos($moduleName, 'MagePulse_') === false) {
+            if (strpos($moduleName, 'MagePulse_') === false) {
                 continue;
             }
 
