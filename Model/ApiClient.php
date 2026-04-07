@@ -26,7 +26,7 @@ use Magento\Framework\Serialize\SerializerInterface;
 
 class ApiClient
 {
-    private const API_URL = 'https://api.magepulse.com/v1/modules';
+    private const API_URL = 'https://www.magepulse.com/api/v1/modules';
     private const CACHE_LIFETIME = 3600;
 
     /**
