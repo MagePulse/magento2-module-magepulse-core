@@ -221,6 +221,9 @@ class Builder
 
         }
 
+        // Remove direct Core items that have been moved into the Core section by the plugin
+        $menu->remove('MagePulse_Core::modules_menu');
+
         return $menu;
     }
 
