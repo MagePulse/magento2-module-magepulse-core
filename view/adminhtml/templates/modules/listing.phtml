@@ -80,18 +80,38 @@
         <?php if (empty($licensedModules)): ?>
             <p><?= $block->escapeHtml(__('None.')) ?></p>
         <?php else: ?>
-            <?php foreach ($licensedModules as $module): ?>
-                <div class="admin__field magepulse-module-item">
-                    <h3><?= $block->escapeHtml($module['name']) ?></h3>
-                    <?php if (!empty($module['description'])): ?>
-                        <p><?= $block->escapeHtml($module['description']) ?></p>
-                    <?php endif; ?>
-                    <?php if (!empty($module['install_command'])): ?>
-                        <p><?= $block->escapeHtml(__('Install with:')) ?></p>
-                        <code><?= $block->escapeHtml($module['install_command']) ?></code>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Name')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Description')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Latest Version')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Install Command')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Docs')) ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($licensedModules as $module): ?>
+                        <tr>
+                            <td><?= $block->escapeHtml($module['name']) ?></td>
+                            <td><?= $block->escapeHtml($module['description']) ?></td>
+                            <td><?= $block->escapeHtml($module['latest_version']) ?></td>
+                            <td>
+                                <?php if (!empty($module['install_command'])): ?>
+                                    <code><?= $block->escapeHtml($module['install_command']) ?></code>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if (!empty($module['docs_url'])): ?>
+                                    <a href="<?= $block->escapeUrl($module['docs_url']) ?>" target="_blank" rel="noopener noreferrer">
+                                        <?= $block->escapeHtml(__('View Docs')) ?>
+                                    </a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         <?php endif; ?>
     </div>
 
@@ -102,19 +122,32 @@
         <?php if (empty($availableModules)): ?>
             <p><?= $block->escapeHtml(__('None.')) ?></p>
         <?php else: ?>
-            <?php foreach ($availableModules as $module): ?>
-                <div class="admin__field magepulse-module-item">
-                    <h3><?= $block->escapeHtml($module['name']) ?></h3>
-                    <?php if (!empty($module['description'])): ?>
-                        <p><?= $block->escapeHtml($module['description']) ?></p>
-                    <?php endif; ?>
-                    <?php if (!empty($module['purchase_url'])): ?>
-                        <a href="<?= $block->escapeUrl($module['purchase_url']) ?>" target="_blank" rel="noopener noreferrer" class="action-primary">
-                            <?= $block->escapeHtml(__('Purchase')) ?>
-                        </a>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Name')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Description')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Latest Version')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('')) ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($availableModules as $module): ?>
+                        <tr>
+                            <td><?= $block->escapeHtml($module['name']) ?></td>
+                            <td><?= $block->escapeHtml($module['description']) ?></td>
+                            <td><?= $block->escapeHtml($module['latest_version']) ?></td>
+                            <td>
+                                <?php if (!empty($module['purchase_url'])): ?>
+                                    <a href="<?= $block->escapeUrl($module['purchase_url']) ?>" target="_blank" rel="noopener noreferrer" class="action-primary">
+                                        <?= $block->escapeHtml(__('Purchase')) ?>
+                                    </a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         <?php endif; ?>
     </div>
 
