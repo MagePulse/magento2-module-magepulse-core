@@ -22,6 +22,13 @@
         <add id="MagePulse_Core::magepulse_menu" title="MagePulse" module="MagePulse_Core" sortOrder="70" resource="MagePulse_Core::main_menu"/>
 
         <!-- Menu Sections-->
+        <add id="MagePulse_Core::core_settings_menu"
+             title="Core Settings"
+             module="MagePulse_Core"
+             resource="MagePulse_Core::menu_config"
+             action="adminhtml/system_config/edit/section/magepulse_core"
+             parent="MagePulse_Core::magepulse_menu"
+             sortOrder="10"/>
         <add id="MagePulse_Core::config_menu" title="Module Configuration" module="MagePulse_Core" sortOrder="60" resource="MagePulse_Core::developer" parent="MagePulse_Core::magepulse_menu"/>
         <add id="MagePulse_Core::modules_menu"
              title="Modules"
