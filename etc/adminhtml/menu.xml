@@ -23,13 +23,6 @@
 
         <!-- Menu Sections-->
         <add id="MagePulse_Core::config_menu" title="Module Configuration" module="MagePulse_Core" sortOrder="60" resource="MagePulse_Core::developer" parent="MagePulse_Core::magepulse_menu"/>
-        <add id="MagePulse_Core::modules_menu"
-             title="Modules"
-             module="MagePulse_Core"
-             resource="MagePulse_Core::modules"
-             action="magepulse/modules/index"
-             parent="MagePulse_Core::magepulse_menu"
-             sortOrder="20"/>
 
     </menu>
 </config>

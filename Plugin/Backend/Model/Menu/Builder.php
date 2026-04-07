@@ -295,8 +295,9 @@ class Builder
     private function isCollectedNode($menuItem)
     {
         $this->logger->debug(__METHOD__);
+        $excludedIds = [self::MAGEPULSE_BASE_MENU, 'MagePulse_Core::config_menu'];
         if (strpos($menuItem->getId(), 'MagePulse') === false
-            || strpos($menuItem->getId(), 'MagePulse_Core') !== false) {
+            || in_array($menuItem->getId(), $excludedIds, true)) {
             return false;
         }
 
@@ -398,13 +399,22 @@ class Builder
                 continue;
             }
 
-            $title = (isset($configItems[$moduleName]['label']) && $configItems[$moduleName]['label'])
-                ? $configItems[$moduleName]['label']
-                : $this->getModuleTitle($moduleName);
+            if ($moduleName === 'MagePulse_Core') {
+                $title = 'Core';
+            } else {
+                $title = (isset($configItems[$moduleName]['label']) && $configItems[$moduleName]['label'])
+                    ? $configItems[$moduleName]['label']
+                    : $this->getModuleTitle($moduleName);
+            }
 
             $installed[$title] = $moduleName;
         }
         ksort($installed);
+
+        // Always place Core first regardless of alphabetical order
+        if (isset($installed['Core'])) {
+            $installed = ['Core' => $installed['Core']] + array_diff_key($installed, ['Core' => null]);
+        }
 
         return $installed;
     }
