@@ -16,16 +16,10 @@
   ~
   -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
-    <acl>
-        <resources>
-            <resource id="Magento_Backend::admin">
-                <resource id="MagePulse_Core::main_menu" title="MagePulse" sortOrder="70">
-                    <resource id="MagePulse_Core::developer" title="Configuration" sortOrder="10"/>
-                    <resource id="MagePulse_Core::modules" title="Modules" sortOrder="20"/>
-                </resource>
-            </resource>
-        </resources>
-    </acl>
-
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="magepulse" frontName="magepulse">
+            <module name="MagePulse_Core"/>
+        </route>
+    </router>
 </config>

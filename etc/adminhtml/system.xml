@@ -30,7 +30,15 @@
                    showInStore="1">
                 <frontend_model>MagePulse\Core\Block\System\Config\Form\Fieldset\Hint</frontend_model>
             </group>
-            <group id="menu" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <group id="account" translate="label" sortOrder="0" showInDefault="1">
+                <label>Account</label>
+                <field id="key" type="text" translate="label comment"
+                       sortOrder="10" showInDefault="1">
+                    <label>Account Key</label>
+                    <comment><![CDATA[Obtain from magepulse.com/account. Required to show available and licensed modules.]]></comment>
+                </field>
+            </group>
+            <group id="menu" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
                 <label>Menu Options</label>
                 <field id="enabled" translate="label" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" type="select">
                     <label>Enabled</label>

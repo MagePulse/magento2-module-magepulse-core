@@ -1,3 +1,4 @@
+<?php
 /*
  * MagePulse
  *
@@ -15,25 +16,20 @@
  *
  */
 
-@import 'module/_icons.less';
+declare(strict_types=1);
 
-//  System Configuration
-//  phpcs:ignore
-#magepulse-container {
-    .lib-clearfix();
-    background: @panel__background-color;
-    border: 1px solid @border-color__base;
-    margin: 0 0 @indent__base;
-    padding: @indent__base;
+namespace MagePulse\Core\Model;
 
-    img {
-        float: left;
-        padding-right: @indent__base;
-    }
-}
+class ConfigProvider extends ConfigProviderAbstract
+{
+    protected string $pathPrefix = 'magepulse_core/';
+    protected string $moduleCode = 'MagePulse_Core';
 
-.magepulse-modules-wrap {
-    > div {
-        margin-bottom: @indent__base;
+    public const ACCOUNT_KEY = 'account/key';
+
+    public function getAccountKey(): ?string
+    {
+        $key = $this->getValue(self::ACCOUNT_KEY);
+        return $key !== '' ? $key : null;
     }
 }

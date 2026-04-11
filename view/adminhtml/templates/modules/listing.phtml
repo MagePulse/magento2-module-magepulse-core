@@ -1,0 +1,154 @@
+<?php
+/*
+ * MagePulse
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MagePulse Proprietary EULA
+ * that is bundled with this package in the file LICENSE.
+ * It is also available through the world-wide-web at this URL:
+ * https://magepulse.com/legal/magento-license/
+ *
+ * @category    MagePulse
+ * @package     MagePulse_Core
+ * @copyright   Copyright (c) MagePulse (https://magepulse.com)
+ * @license     https://magepulse.com/legal/magento-license/  MagePulse Proprietary EULA
+ *
+ */
+
+/** @var MagePulse\Core\Block\Adminhtml\Modules\Listing $block */
+?>
+
+<div class="admin__data-grid-wrap magepulse-modules-wrap">
+
+    <?php /* Installed Modules */ ?>
+    <div class="magepulse-modules-section">
+        <h2><?= $block->escapeHtml(__('Installed Modules')) ?></h2>
+        <?php $installedModules = $block->getInstalledModules(); ?>
+        <?php if (empty($installedModules)): ?>
+            <p><?= $block->escapeHtml(__('None.')) ?></p>
+        <?php else: ?>
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Name')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Version')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Latest Version')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Status')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Docs')) ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($installedModules as $module): ?>
+                        <tr>
+                            <td><?= $block->escapeHtml($module['name']) ?></td>
+                            <td><?= $block->escapeHtml($module['version']) ?></td>
+                            <td><?= $block->escapeHtml($module['latest_version']) ?></td>
+                            <td>
+                                <?php if ($module['display_state'] === 'installed_active'): ?>
+                                    <span style="color: #008000; font-weight: bold;">
+                                        <?= $block->escapeHtml(__('Active')) ?>
+                                    </span>
+                                <?php elseif ($module['display_state'] === 'installed_disabled'): ?>
+                                    <span style="color: #e07000; font-weight: bold;">
+                                        <?= $block->escapeHtml(__('Disabled')) ?>
+                                    </span>
+                                <?php else: ?>
+                                    <span style="color: #666666;">
+                                        <?= $block->escapeHtml(__('Installed')) ?>
+                                    </span>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if (!empty($module['docs_url'])): ?>
+                                    <a href="<?= $block->escapeUrl($module['docs_url']) ?>" target="_blank" rel="noopener noreferrer">
+                                        <?= $block->escapeHtml(__('View Docs')) ?>
+                                    </a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </div>
+
+    <?php /* Licensed — Not Installed */ ?>
+    <div class="magepulse-modules-section">
+        <h2><?= $block->escapeHtml(__('Licensed — Not Installed')) ?></h2>
+        <?php $licensedModules = $block->getLicensedNotInstalled(); ?>
+        <?php if (empty($licensedModules)): ?>
+            <p><?= $block->escapeHtml(__('None.')) ?></p>
+        <?php else: ?>
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Name')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Description')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Latest Version')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Install Command')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Docs')) ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($licensedModules as $module): ?>
+                        <tr>
+                            <td><?= $block->escapeHtml($module['name']) ?></td>
+                            <td><?= $block->escapeHtml($module['description']) ?></td>
+                            <td><?= $block->escapeHtml($module['latest_version']) ?></td>
+                            <td>
+                                <?php if (!empty($module['install_command'])): ?>
+                                    <code><?= $block->escapeHtml($module['install_command']) ?></code>
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if (!empty($module['docs_url'])): ?>
+                                    <a href="<?= $block->escapeUrl($module['docs_url']) ?>" target="_blank" rel="noopener noreferrer">
+                                        <?= $block->escapeHtml(__('View Docs')) ?>
+                                    </a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </div>
+
+    <?php /* Available to Purchase */ ?>
+    <div class="magepulse-modules-section">
+        <h2><?= $block->escapeHtml(__('Available to Purchase')) ?></h2>
+        <?php $availableModules = $block->getAvailableModules(); ?>
+        <?php if (empty($availableModules)): ?>
+            <p><?= $block->escapeHtml(__('None.')) ?></p>
+        <?php else: ?>
+            <table class="data-grid">
+                <thead>
+                    <tr>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Name')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Description')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('Latest Version')) ?></th>
+                        <th class="data-grid-th"><?= $block->escapeHtml(__('')) ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($availableModules as $module): ?>
+                        <tr>
+                            <td><?= $block->escapeHtml($module['name']) ?></td>
+                            <td><?= $block->escapeHtml($module['description']) ?></td>
+                            <td><?= $block->escapeHtml($module['latest_version']) ?></td>
+                            <td>
+                                <?php if (!empty($module['purchase_url'])): ?>
+                                    <a href="<?= $block->escapeUrl($module['purchase_url']) ?>" target="_blank" rel="noopener noreferrer" class="action-primary">
+                                        <?= $block->escapeHtml(__('Purchase')) ?>
+                                    </a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
+    </div>
+
+</div>
